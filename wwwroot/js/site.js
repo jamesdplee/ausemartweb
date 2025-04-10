@@ -14,36 +14,26 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollBehavior();
 });
 
-// Enhanced fade-in animation for elements with staggered effect
+// Fade-in animation for elements
 function initFadeAnimations() {
     const elements = document.querySelectorAll('.fade-in');
     
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add a small delay based on the element's index for a staggered effect
-                setTimeout(() => {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 100); // 100ms stagger between elements
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1
     });
     
     elements.forEach(element => {
         element.style.opacity = 0;
-        element.style.transform = 'translateY(25px)';
-        element.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         observer.observe(element);
-    });
-    
-    // Add special animations for hero section elements
-    const heroElements = document.querySelectorAll('.hero-section .fade-in');
-    heroElements.forEach((element, index) => {
-        element.style.transitionDelay = `${index * 0.2}s`;
     });
 }
 

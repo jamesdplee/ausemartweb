@@ -8,49 +8,44 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ausemartweb.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-toggleable-sm navbar-light bg-white">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-4">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-kangaroo-animal-flaticons-lineal-color-flat-icons-2.png" width="38" alt="Aus-E-Mart" />
+                    <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-kangaroo-animal-flaticons-lineal-color-flat-icons-2.png" width="50" alt="Aus-E-Mart" />
                     <span>Aus-E-Mart</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-md-inline-flex justify-content-between">
-                    <ul class="navbar-nav mx-auto">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"]?.ToString() == "Home" ? "active" : "")" asp-area="" asp-page="/Index">
+                            <a class="nav-link" asp-area="" asp-page="/Index">
                                 <i class="fas fa-home me-1"></i> Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"]?.ToString() == "Products" ? "active" : "")" asp-area="" asp-page="/Products">
+                            <a class="nav-link" asp-area="" asp-page="/Products">
                                 <i class="fas fa-store me-1"></i> Products
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"]?.ToString() == "About" ? "active" : "")" asp-area="" asp-page="/About">
-                                <i class="fas fa-info-circle me-1"></i> About
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @(ViewData["Title"]?.ToString() == "App" ? "active" : "")" asp-area="" asp-page="/App/Index">
+                            <a class="nav-link" asp-area="" asp-page="/App/Index">
                                 <i class="fas fa-mobile-alt me-1"></i> App
                             </a>
                         </li>                                                  
                     </ul>
-                    <div class="d-flex align-items-center">
-                        <a class="btn btn-outline-primary me-3" href="#">
+                    <div class="d-flex">
+                        <a class="btn btn-outline-success me-2" href="#">
                             <i class="fas fa-user me-1"></i> Sign In
                         </a>
-                        <a class="position-relative cart-icon" asp-area="" asp-page="/Cart">
-                            <i class="fas fa-shopping-cart fs-4"></i>
+                        <a class="nav-link position-relative" asp-area="" asp-page="/Cart">
+                            <i class="fas fa-shopping-cart fs-5"></i>
                             <span class="cart-badge">0</span>
                         </a>
                     </div>
@@ -59,41 +54,27 @@
         </nav>
     </header>
     
-    <main class="flex-grow-1">
-        @RenderBody()
-    </main>
+    @RenderBody()
 
     <footer class="footer">
         <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center gap-2 mb-3">
-                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-kangaroo-animal-flaticons-lineal-color-flat-icons-2.png" width="38" alt="Aus-E-Mart" />
-                        <span class="fs-4 fw-bold">Aus-E-Mart</span>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-kangaroo-animal-flaticons-lineal-color-flat-icons-2.png" width="30" alt="Aus-E-Mart" />
+                        <span>Aus-E-Mart Web Store</span>
                     </div>
-                    <p class="mb-2">Authentic Australian products delivered worldwide.</p>
-                    <p class="mb-0 small">© 2025 Aus-E-Mart. All rights reserved.</p>
+                    <p class="mt-2 mb-0 small">Your one-stop shop for all things Aussie!</p>
                 </div>
-                <div class="col-md-4">
-                    <h5 class="mb-3 text-light">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a asp-area="" asp-page="/Index"><i class="fas fa-home me-2"></i>Home</a></li>
-                        <li class="mb-2"><a asp-area="" asp-page="/Products"><i class="fas fa-store me-2"></i>Products</a></li>
-                        <li class="mb-2"><a asp-area="" asp-page="/About"><i class="fas fa-info-circle me-2"></i>About Us</a></li>
-                        <li class="mb-2"><a asp-area="" asp-page="/App/Index"><i class="fas fa-mobile-alt me-2"></i>Mobile App</a></li>
-                        <li class="mb-2"><a asp-area="" asp-page="/Privacy"><i class="fas fa-shield-alt me-2"></i>Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="mb-3 text-light">Connect With Us</h5>
-                    <div class="d-flex gap-3 mb-3">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <div class="col-md-6 text-md-end">
+                    <div>
+                        <a asp-area="" asp-page="/Privacy" class="me-3">Privacy Policy</a>
+                        <a href="#" class="me-3">Terms of Service</a>
+                        <a href="#" class="me-3">Contact Us</a>
                     </div>
-                    <p class="small">Customer Service: +61 2 1234 5678</p>
-                    <p class="small">Email: support@ausemart.com</p>
+                    <div class="mt-2 small text-muted">
+                        Running on server: '@System.Environment.MachineName'
+                    </div>
                 </div>
             </div>
         </div>
