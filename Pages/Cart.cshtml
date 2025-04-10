@@ -1,8 +1,193 @@
 ﻿@page
 @model CartModel
 @{
-    ViewData["Title"] = "Aus-E-Mart Shopping Cart";
+    ViewData["Title"] = "Shopping Cart";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Here's your shopping cart:</p>
+<!-- Cart Header -->
+<div class="hero-section" style="padding: 2rem 0;">
+    <div class="container">
+        <h1 class="display-4">Your Shopping Cart</h1>
+        <p class="lead">Review your items before checkout</p>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 fade-in">
+            <!-- Cart Items -->
+            <div class="card mb-4">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0">Cart Items (3)</h3>
+                    <button class="btn btn-outline-secondary btn-sm">
+                        <i class="fas fa-trash-alt me-1"></i> Clear Cart
+                    </button>
+                </div>
+                <div class="card-body p-0">
+                    <!-- Cart Item 1 -->
+                    <div class="d-flex p-3 border-bottom">
+                        <div class="flex-shrink-0">
+                            <img src="/images/kangaroo.jpg" alt="Product" class="rounded" width="100" height="100" style="object-fit: cover;">
+                        </div>
+                        <div class="flex-grow-1 ms-3 d-flex flex-column">
+                            <div class="d-flex justify-content-between">
+                                <h5>Kangaroo Plush Toy</h5>
+                                <h5 class="text-primary">$29.99</h5>
+                            </div>
+                            <p class="text-muted mb-2">Size: Medium | Color: Brown</p>
+                            <div class="d-flex mt-auto justify-content-between align-items-center">
+                                <div class="input-group input-group-sm" style="width: 120px;">
+                                    <button class="btn btn-outline-secondary" type="button">-</button>
+                                    <input type="text" class="form-control text-center" value="1">
+                                    <button class="btn btn-outline-secondary" type="button">+</button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm text-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="d-flex p-3 border-bottom">
+                        <div class="flex-shrink-0">
+                            <img src="/images/koala.jpg" alt="Product" class="rounded" width="100" height="100" style="object-fit: cover;">
+                        </div>
+                        <div class="flex-grow-1 ms-3 d-flex flex-column">
+                            <div class="d-flex justify-content-between">
+                                <h5>Koala Keychain</h5>
+                                <h5 class="text-primary">$12.99</h5>
+                            </div>
+                            <p class="text-muted mb-2">Material: Metal | Type: Keyring</p>
+                            <div class="d-flex mt-auto justify-content-between align-items-center">
+                                <div class="input-group input-group-sm" style="width: 120px;">
+                                    <button class="btn btn-outline-secondary" type="button">-</button>
+                                    <input type="text" class="form-control text-center" value="2">
+                                    <button class="btn btn-outline-secondary" type="button">+</button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm text-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 3 -->
+                    <div class="d-flex p-3">
+                        <div class="flex-shrink-0">
+                            <img src="/images/spider.jpg" alt="Product" class="rounded" width="100" height="100" style="object-fit: cover;">
+                        </div>
+                        <div class="flex-grow-1 ms-3 d-flex flex-column">
+                            <div class="d-flex justify-content-between">
+                                <h5>Spider Fridge Magnet</h5>
+                                <h5 class="text-primary">$8.99</h5>
+                            </div>
+                            <p class="text-muted mb-2">Material: Resin | Size: Small</p>
+                            <div class="d-flex mt-auto justify-content-between align-items-center">
+                                <div class="input-group input-group-sm" style="width: 120px;">
+                                    <button class="btn btn-outline-secondary" type="button">-</button>
+                                    <input type="text" class="form-control text-center" value="3">
+                                    <button class="btn btn-outline-secondary" type="button">+</button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm text-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue Shopping -->
+            <div class="d-flex justify-content-between mb-4">
+                <a href="/Products" class="btn btn-outline-primary">
+                    <i class="fas fa-arrow-left me-2"></i> Continue Shopping
+                </a>
+                <button class="btn btn-outline-success">
+                    <i class="fas fa-sync-alt me-2"></i> Update Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="col-lg-4 fade-in">
+            <!-- Order Summary -->
+            <div class="card mb-4">
+                <div class="card-header bg-white">
+                    <h3 class="mb-0">Order Summary</h3>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Subtotal:</span>
+                        <span>$64.96</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Shipping:</span>
+                        <span>$5.99</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Tax:</span>
+                        <span>$7.09</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-4 fw-bold">
+                        <span>Total:</span>
+                        <span class="text-primary">$78.04</span>
+                    </div>
+                    <button class="btn btn-primary w-100 mb-3">
+                        <i class="fas fa-credit-card me-2"></i> Proceed to Checkout
+                    </button>
+                    <div class="text-center mt-3">
+                        <div class="text-muted mb-2">We Accept</div>
+                        <div class="d-flex justify-content-center gap-2">
+                            <i class="fab fa-cc-visa fa-2x text-muted"></i>
+                            <i class="fab fa-cc-mastercard fa-2x text-muted"></i>
+                            <i class="fab fa-cc-amex fa-2x text-muted"></i>
+                            <i class="fab fa-cc-paypal fa-2x text-muted"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Promo Code -->
+            <div class="card">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Apply Promo Code</h5>
+                </div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter code">
+                        <button class="btn btn-secondary" type="button">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Add fade-in animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            });
+            
+            elements.forEach(element => {
+                element.style.opacity = 0;
+                observer.observe(element);
+            });
+        });
+    </script>
+}

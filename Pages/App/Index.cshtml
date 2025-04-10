@@ -1,9 +1,218 @@
 ﻿@page
 @model ausemartweb.Pages.App.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Mobile App";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to the App!</h1>
+<!-- App Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 fade-in">
+                <h1 class="display-4">Get the Aus-E-Mart App</h1>
+                <p class="lead mb-4">Shop Australian products on the go with our mobile app. Available for iOS and Android.</p>
+                <div class="d-flex gap-3 mb-4">
+                    <a href="#" class="btn btn-light btn-lg">
+                        <i class="fab fa-apple me-2"></i> App Store
+                    </a>
+                    <a href="#" class="btn btn-light btn-lg">
+                        <i class="fab fa-google-play me-2"></i> Google Play
+                    </a>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <div class="d-flex">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </div>
+                        <small class="text-light">4.8/5 (2,354 reviews)</small>
+                    </div>
+                    <div>
+                        <span class="badge bg-light text-dark p-2">
+                            <i class="fas fa-download me-1"></i> 100K+ Downloads
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center fade-in d-none d-lg-block">
+                <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/null/external-kangaroo-animal-flaticons-lineal-color-flat-icons-2.png" alt="App Screenshot" class="img-fluid" style="max-height: 400px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));">
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="container my-5">
+    <!-- App Features -->
+    <h2 class="text-center mb-5">App Features</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3">
+                    <i class="fas fa-bolt text-primary" style="font-size: 3rem;"></i>
+                </div>
+                <h3>Fast Checkout</h3>
+                <p>Complete your purchase in seconds with our streamlined checkout process.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3">
+                    <i class="fas fa-bell text-primary" style="font-size: 3rem;"></i>
+                </div>
+                <h3>Order Tracking</h3>
+                <p>Get real-time notifications about your order status and delivery updates.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3">
+                    <i class="fas fa-gift text-primary" style="font-size: 3rem;"></i>
+                </div>
+                <h3>Exclusive Deals</h3>
+                <p>Access app-only discounts and special promotions available nowhere else.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Screenshots -->
+    <h2 class="text-center my-5">App Screenshots</h2>
+    <div class="row justify-content-center">
+        <div class="col-6 col-md-4 col-lg-2 mb-4 fade-in">
+            <div class="card">
+                <div class="card-body p-2">
+                    <img src="/images/kangaroo.jpg" alt="App Screenshot" class="img-fluid rounded">
+                </div>
+                <div class="card-footer bg-white text-center">
+                    <small>Home Screen</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 mb-4 fade-in">
+            <div class="card">
+                <div class="card-body p-2">
+                    <img src="/images/koala.jpg" alt="App Screenshot" class="img-fluid rounded">
+                </div>
+                <div class="card-footer bg-white text-center">
+                    <small>Product Details</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 mb-4 fade-in">
+            <div class="card">
+                <div class="card-body p-2">
+                    <img src="/images/spider.jpg" alt="App Screenshot" class="img-fluid rounded">
+                </div>
+                <div class="card-footer bg-white text-center">
+                    <small>Shopping Cart</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 mb-4 fade-in">
+            <div class="card">
+                <div class="card-body p-2">
+                    <img src="/images/kangaroo.jpg" alt="App Screenshot" class="img-fluid rounded">
+                </div>
+                <div class="card-footer bg-white text-center">
+                    <small>Checkout</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 mb-4 fade-in">
+            <div class="card">
+                <div class="card-body p-2">
+                    <img src="/images/koala.jpg" alt="App Screenshot" class="img-fluid rounded">
+                </div>
+                <div class="card-footer bg-white text-center">
+                    <small>User Profile</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Reviews -->
+    <div class="card mt-5 mb-5">
+        <div class="card-body p-4">
+            <h2 class="text-center mb-4">What Our Users Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0 fade-in">
+                    <div class="border rounded p-3 h-100">
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="fst-italic">"This app makes shopping for my favorite Aussie products so easy! The interface is intuitive and checkout is super fast."</p>
+                        <p class="fw-bold mb-0">- Sarah J.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 fade-in">
+                    <div class="border rounded p-3 h-100">
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="fst-italic">"I love the exclusive discounts and deals. The app notifications keep me updated on sales for my favorite items."</p>
+                        <p class="fw-bold mb-0">- Mike T.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="border rounded p-3 h-100">
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </div>
+                        <p class="fst-italic">"The order tracking feature is brilliant. I always know exactly when my package will arrive. Highly recommend!"</p>
+                        <p class="fw-bold mb-0">- Emma L.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download CTA -->
+    <div class="text-center mb-5 fade-in">
+        <h2 class="mb-3">Download Now</h2>
+        <p class="lead mb-4">Join thousands of happy customers shopping with our app</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="#" class="btn btn-primary btn-lg">
+                <i class="fab fa-apple me-2"></i> App Store
+            </a>
+            <a href="#" class="btn btn-success btn-lg">
+                <i class="fab fa-google-play me-2"></i> Google Play
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Add fade-in animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            });
+            
+            elements.forEach(element => {
+                element.style.opacity = 0;
+                observer.observe(element);
+            });
+        });
+    </script>
+}

@@ -1,14 +1,121 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">G'day and welcome to Aus-E-Mart!</h1>
-    <p>You can find all your favourite Aussie products and more.</p>
-    <br/>
-    <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-koala-animal-flaticons-lineal-color-flat-icons-2.png" width="64" alt="Koala" />
-    <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-platypus-animal-flaticons-lineal-color-flat-icons-2.png" width="64" alt="Platypus" />
-    <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-snake-animal-flaticons-lineal-color-flat-icons.png" width="64" alt="Snake" />
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 fade-in">
+                <h1 class="display-4">G'day and welcome to Aus-E-Mart!</h1>
+                <p class="lead mb-4">Your one-stop destination for authentic Australian products shipped worldwide with love from Down Under.</p>
+                <div class="d-flex gap-2">
+                    <a href="/Products" class="btn btn-primary btn-lg">
+                        Explore Products <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                    <a href="#featured" class="btn btn-outline-light btn-lg">
+                        Today's Deals <i class="fas fa-tag ms-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block text-center fade-in">
+                <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/null/external-kangaroo-animal-flaticons-lineal-color-flat-icons-2.png" alt="Australia" class="img-fluid" style="max-height: 300px;">
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- Features Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3">
+                    <i class="fas fa-shipping-fast text-primary" style="font-size: 3rem;"></i>
+                </div>
+                <h3>Fast Shipping</h3>
+                <p>Express delivery from Australia to anywhere in the world.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3">
+                    <i class="fas fa-check-circle text-primary" style="font-size: 3rem;"></i>
+                </div>
+                <h3>Authentic Products</h3>
+                <p>100% genuine Aussie products sourced directly from local suppliers.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3">
+                    <i class="fas fa-headset text-primary" style="font-size: 3rem;"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Our friendly team is always ready to assist you with any questions.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Australian Icons Section -->
+<div class="container my-5 text-center">
+    <h2 class="mb-4">Discover Aussie Icons</h2>
+    <div class="aussie-icons">
+        <div class="aussie-icon">
+            <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/128/null/external-koala-animal-flaticons-lineal-color-flat-icons-2.png" width="100" alt="Koala" />
+            <h5 class="mt-3">Koala Collection</h5>
+        </div>
+        <div class="aussie-icon">
+            <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/128/null/external-platypus-animal-flaticons-lineal-color-flat-icons-2.png" width="100" alt="Platypus" />
+            <h5 class="mt-3">Platypus Products</h5>
+        </div>
+        <div class="aussie-icon">
+            <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/128/null/external-snake-animal-flaticons-lineal-color-flat-icons.png" width="100" alt="Snake" />
+            <h5 class="mt-3">Snake Souvenirs</h5>
+        </div>
+    </div>
+    <a href="/Products" class="btn btn-primary mt-4">View All Categories</a>
+</div>
+
+<!-- Call to Action -->
+<div class="container my-5">
+    <div class="card bg-light">
+        <div class="card-body p-5 text-center">
+            <h2>Subscribe to our newsletter</h2>
+            <p class="lead mb-4">Get the latest updates on new products and special promotions!</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Add fade-in animation to elements as they come into viewport
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            });
+            
+            elements.forEach(element => {
+                element.style.opacity = 0;
+                observer.observe(element);
+            });
+        });
+    </script>
+}

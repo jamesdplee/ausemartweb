@@ -9,4 +9,5 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /ausemartweb
 COPY --from=build-stage /ausemartweb/out .
+EXPOSE 80
 ENTRYPOINT ["dotnet", "ausemartweb.dll"]

@@ -1,18 +1,266 @@
+:root {
+  --aussie-green: #00843D;
+  --aussie-gold: #FFCD00;
+  --aussie-blue: #0072B2;
+  --aussie-red: #E5002B;
+  --neutral-dark: #333333;
+  --neutral-light: #F5F5F5;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
 html {
-  font-size: 14px;
+  font-size: 16px;
+  position: relative;
+  min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  margin-bottom: 70px;
+  background-color: var(--neutral-light);
+  color: var(--neutral-dark);
+  line-height: 1.6;
 }
 
-body {
-  margin-bottom: 60px;
+/* Navbar Styling */
+.navbar {
+  background-color: #fff !important;
+  box-shadow: var(--shadow);
+  padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--aussie-green) !important;
+  transition: var(--transition);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.2rem;
+  transition: var(--transition);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--aussie-green);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--aussie-green);
+  border-color: var(--aussie-green);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: #006b31;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: var(--aussie-gold);
+  border-color: var(--aussie-gold);
+  color: var(--neutral-dark);
+}
+
+.btn-secondary:hover {
+  background-color: #e6b800;
+  color: var(--neutral-dark);
+}
+
+/* Cards */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  color: var(--aussie-green);
+  font-weight: 600;
+}
+
+/* Product List */
+.product-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border-left: 4px solid var(--aussie-green);
+}
+
+.product-item:hover {
+  transform: translateX(5px);
+}
+
+.product-img {
+  border-radius: 4px;
+  margin-right: 1.5rem;
+  object-fit: cover;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--aussie-blue) 0%, var(--aussie-green) 100%);
+  color: white;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+  border-radius: 0 0 30% 0;
+  position: relative;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 20px;
+  background-color: var(--aussie-gold);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+
+.display-4 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--neutral-dark);
+  color: white;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer a {
+  color: var(--aussie-gold);
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Australian Icons */
+.aussie-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.aussie-icon {
+  transition: var(--transition);
+}
+
+.aussie-icon:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Cart Badge */
+.cart-badge {
+  background-color: var(--aussie-red);
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  position: relative;
+  top: -8px;
+  transition: transform 0.3s ease;
+}
+
+/* Cart Badge Animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+.pulse-animation {
+  animation: pulse 0.5s ease-in-out;
+}
+
+/* Navbar Scroll Effect */
+.navbar-scrolled {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Toast Notifications */
+.toast-container {
+  z-index: 9999;
+}
+
+.toast {
+  transition: opacity 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
 }

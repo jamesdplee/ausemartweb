@@ -1,15 +1,187 @@
 @page
 @model ProductsModel
 @{
-    ViewData["Title"] = "Aus-E-Mart Products";
+    ViewData["Title"] = "Products";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Come check out our products! </p>
-<br/>
-<ul class="list-group">
-    <li class="list-group-item"><img src="/images/kangaroo.jpg" width="100"/> Kangaroo Products </li>
-    <li class="list-group-item"><img src="/images/koala.jpg" width="100"/> Koala Products </li>
-    <li class="list-group-item"><img src="/images/spider.jpg" width="100"/> Spider Products </li>
-</ul>
+<!-- Products Header -->
+<div class="hero-section" style="padding: 2rem 0;">
+    <div class="container">
+        <h1 class="display-4">Explore Our Products</h1>
+        <p class="lead">Authentic Australian goods shipped directly to your doorstep</p>
+    </div>
+</div>
+
+<div class="container my-5">
+    <!-- Filter and Search Row -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="d-flex">
+                <select class="form-select me-2">
+                    <option selected>All Categories</option>
+                    <option>Souvenirs</option>
+                    <option>Food & Drinks</option>
+                    <option>Clothing</option>
+                    <option>Home Decor</option>
+                </select>
+                <select class="form-select">
+                    <option selected>Sort By: Featured</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest First</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search products...">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Categories -->
+    <h2 class="mb-4">Featured Categories</h2>
+    <div class="row">
+        <!-- Kangaroo Products Card -->
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card">
+                <div class="position-relative">
+                    <img src="/images/kangaroo.jpg" class="card-img-top product-card-img" alt="Kangaroo Products">
+                    <div class="position-absolute bottom-0 start-0 bg-primary text-white px-3 py-2 rounded-top">
+                        <i class="fas fa-star me-1"></i> Popular
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Kangaroo Collection</h3>
+                    <p class="card-text">Explore our range of high-quality kangaroo-themed products.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary">View Products</button>
+                        <span class="text-muted">15 items</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Koala Products Card -->
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card">
+                <div class="position-relative">
+                    <img src="/images/koala.jpg" class="card-img-top product-card-img" alt="Koala Products">
+                    <div class="position-absolute bottom-0 start-0 bg-success text-white px-3 py-2 rounded-top">
+                        <i class="fas fa-leaf me-1"></i> Eco-friendly
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Koala Collection</h3>
+                    <p class="card-text">Adorable koala-themed gifts and souvenirs for every occasion.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary">View Products</button>
+                        <span class="text-muted">12 items</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spider Products Card -->
+        <div class="col-md-4 mb-4 fade-in">
+            <div class="card">
+                <div class="position-relative">
+                    <img src="/images/spider.jpg" class="card-img-top product-card-img" alt="Spider Products">
+                    <div class="position-absolute bottom-0 start-0 bg-danger text-white px-3 py-2 rounded-top">
+                        <i class="fas fa-bolt me-1"></i> Trending
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Spider Collection</h3>
+                    <p class="card-text">Unique spider-themed products for the brave and curious.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary">View Products</button>
+                        <span class="text-muted">8 items</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Sellers Section -->
+    <h2 class="mt-5 mb-4">Best Sellers</h2>
+    <div class="row">
+        <!-- Product items would go here -->
+        @for (int i = 1; i <= 6; i++)
+        {
+            <div class="col-md-4 col-lg-3 mb-4 fade-in">
+                <div class="card product-card h-100">
+                    <div class="position-relative">
+                        <img src="@($"/images/{(i % 3 == 0 ? "spider" : i % 3 == 1 ? "kangaroo" : "koala")}.jpg")" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Product">
+                        @if (i % 4 == 0)
+                        {
+                            <span class="position-absolute top-0 end-0 bg-danger text-white px-2 py-1 m-2 rounded">SALE</span>
+                        }
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Aussie Product @i</h5>
+                        <p class="card-text flex-grow-1">High-quality Australian product with premium features.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="fw-bold">$@(20 + i * 5).99</span>
+                            <button class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-shopping-cart me-1"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Call to Action -->
+    <div class="card bg-light mt-5">
+        <div class="card-body p-4 text-center">
+            <h3>Can't find what you're looking for?</h3>
+            <p class="mb-3">Contact our customer support team for assistance.</p>
+            <button class="btn btn-primary">
+                <i class="fas fa-headset me-2"></i> Contact Support
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .product-card-img {
+        height: 220px;
+        object-fit: cover;
+    }
+    
+    .product-card {
+        transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+
+@section Scripts {
+    <script>
+        // Add fade-in animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            });
+            
+            elements.forEach(element => {
+                element.style.opacity = 0;
+                observer.observe(element);
+            });
+        });
+    </script>
+}
 
